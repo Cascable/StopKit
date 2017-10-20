@@ -109,6 +109,7 @@
 		50310A861F99DD7400D36CE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UniversalISOValues.strings; sourceTree = "<group>"; };
 		50310A881F99DD7600D36CE1 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/UniversalISOValues.strings; sourceTree = "<group>"; };
 		509B6CC21F99E67600F0E888 /* StopKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StopKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50C0F1C41F99EEFA004A9162 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +133,7 @@
 		50310A391F99D98500D36CE1 = {
 			isa = PBXGroup;
 			children = (
+				50C0F1C41F99EEFA004A9162 /* README.md */,
 				50310A451F99D98500D36CE1 /* StopKit */,
 				50310A441F99D98500D36CE1 /* Products */,
 			);
