@@ -23,7 +23,7 @@ NS_SWIFT_NAME(ExposureStops)
  @param decimalValue The value to convert to an exposure stop vector.
  @return Returns a `CBLExposureStops` object representing the given value.
  */
-+(nullable CBLExposureStops *)stopsFromDecimalValue:(double)decimalValue;
++(nonnull CBLExposureStops *)stopsFromDecimalValue:(double)decimalValue;
 
 /** Returns an array of exposure stop vectors between (and including) the given exposure stop vectors.
 

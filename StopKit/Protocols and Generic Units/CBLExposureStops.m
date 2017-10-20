@@ -12,7 +12,7 @@
     return [[self alloc] initWithWholeStops:0 fraction:CBLExposureStopFractionNone isNegative:NO];
 }
 
-+(nullable CBLExposureStops *)stopsFromDecimalValue:(double)decimalValue {
++(nonnull CBLExposureStops *)stopsFromDecimalValue:(double)decimalValue {
 
     BOOL isNegative = (decimalValue < 0.0);
 
