@@ -1,0 +1,6 @@
+#import "CBLUniversalPropertyValue.h"
+#import "CBLExposureStops.h"
+#import "CBLExposureCompensationValue.h"
+#import "CBLApertureValue.h"
+#import "CBLShutterSpeedValue.h"
+#import "CBLISOValue.h"
