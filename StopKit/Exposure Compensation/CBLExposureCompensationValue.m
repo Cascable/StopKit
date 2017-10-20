@@ -44,6 +44,10 @@
     return [otherEV.stopsFromZeroEV isEqual:self.stopsFromZeroEV];
 }
 
+-(BOOL)isDeterminate {
+    return YES;
+}
+
 -(NSComparisonResult)compare:(nonnull id <CBLUniversalExposurePropertyValue>)value {
     if (![value isKindOfClass:[self class]]) {
         return CBLExposureComparisonInvalid;

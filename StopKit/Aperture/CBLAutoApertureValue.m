@@ -30,12 +30,10 @@
 }
 
 -(nullable id <CBLUniversalExposurePropertyValue>)valueByAddingStops:(nonnull CBLExposureStops *)stops {
-    [self illegalOperationAttempted];
     return nil;
 }
 
 -(nullable CBLExposureStops *)stopsDifferenceFrom:(nonnull id<CBLUniversalExposurePropertyValue>)value {
-    [self illegalOperationAttempted];
     return nil;
 }
 

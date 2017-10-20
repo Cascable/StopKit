@@ -43,8 +43,11 @@
     return NSOrderedSame;
 }
 
+-(BOOL)isDeterminate {
+    return NO;
+}
+
 -(CBLExposureStops *)stopsDifferenceFrom:(id <CBLUniversalExposurePropertyValue>)value {
-    [self illegalOperationAttempted];
     return nil;
 }
 
@@ -54,7 +57,6 @@
 }
 
 -(CBLISOValue *)valueByAddingStops:(CBLExposureStops *)stops {
-    [self illegalOperationAttempted];
     return nil;
 }
 

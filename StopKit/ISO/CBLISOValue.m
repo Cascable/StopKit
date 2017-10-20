@@ -83,6 +83,10 @@
     return [otherISO.stopsFrom100 isEqual:self.stopsFrom100];
 }
 
+-(BOOL)isDeterminate {
+    return YES;
+}
+
 -(NSComparisonResult)compare:(nonnull id <CBLUniversalExposurePropertyValue>)value {
     if (![value isKindOfClass:[self class]]) {
         return CBLExposureComparisonInvalid;

@@ -87,6 +87,10 @@
     return [self.stopsFromF8 isEqual:[object stopsFromF8]];
 }
 
+-(BOOL)isDeterminate {
+    return YES;
+}
+
 -(NSComparisonResult)compare:(nonnull id <CBLUniversalExposurePropertyValue>)value {
     if (![value isKindOfClass:[self class]]) {
         return CBLExposureComparisonInvalid;

@@ -55,7 +55,6 @@
 }
 
 -(CBLExposureStops *)stopsDifferenceFrom:(id <CBLUniversalExposurePropertyValue>)value {
-    [self illegalOperationAttempted];
     return nil;
 }
 
@@ -80,7 +79,6 @@
 }
 
 -(CBLShutterSpeedValue *)valueByAddingStops:(CBLExposureStops *)stops {
-    [self illegalOperationAttempted];
     return nil;
 }
 
