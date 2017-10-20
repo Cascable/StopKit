@@ -9,7 +9,7 @@ NS_SWIFT_NAME(ExposureCompensationValue)
 @interface CBLExposureCompensationValue : NSObject <CBLUniversalExposurePropertyValue>
 
 /** Returns an exposure compensation value of zero.  */
-+(nonnull CBLExposureCompensationValue *)zeroEV;
+@property (class, nonatomic, readonly, nonnull) CBLExposureCompensationValue *zeroEV;
 
 /** Returns an exposure compensation value for the given number of stops from zero.
  

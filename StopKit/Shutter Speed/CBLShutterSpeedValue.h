@@ -6,10 +6,10 @@ NS_SWIFT_NAME(ShutterSpeedValue)
 @interface CBLShutterSpeedValue : NSObject <CBLUniversalExposurePropertyValue>
 
 /** Returns an instance representing a shutter speed of one second. */
-+(nonnull CBLShutterSpeedValue *)oneSecondShutterSpeed;
+@property (class, nonatomic, readonly, nonnull) CBLShutterSpeedValue *oneSecondShutterSpeed;
 
 /** Returns an instance representing a shutter speed of 1/250 of a second. */
-+(nonnull CBLShutterSpeedValue *)oneTwoHundredFiftiethShutterSpeed;
+@property (class, nonatomic, readonly, nonnull) CBLShutterSpeedValue *oneTwoHundredFiftiethShutterSpeed;
 
 /**
  Returns a singleton representing a "bulb" (indeterminate) shutter speed you might encounter when working with cameras.
@@ -17,7 +17,7 @@ NS_SWIFT_NAME(ShutterSpeedValue)
  @warning Most properties and all math methods will raise an exception when called. This value should only be used for
  comparison in order to avoid trying to do math with this value when encountered. You can also check against the `isDeterminate` property.
  */
-+(nonnull CBLShutterSpeedValue *)bulbShutterSpeed;
+@property (class, nonatomic, readonly, nonnull) CBLShutterSpeedValue *bulbShutterSpeed;
 
 /**
  Returns a singleton representing the "automatic" shutter speed you might encounter when working with cameras.
@@ -25,7 +25,7 @@ NS_SWIFT_NAME(ShutterSpeedValue)
  @warning Most properties and all math methods will raise an exception when called. This value should only be used for
  comparison in order to avoid trying to do math with this value when encountered.
  */
-+(nonnull CBLShutterSpeedValue *)automaticShutterSpeed;
+@property (class, nonatomic, readonly, nonnull) CBLShutterSpeedValue *automaticShutterSpeed;
 
 /** 
  Returns an array of values representing the expected shutter speeds between the given values.

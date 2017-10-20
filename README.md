@@ -16,16 +16,16 @@ In general, a postive stops value means "more light" or "a brighter image", and 
 
 ```swift
 
-print(ApertureValue.f8().stopsDifference(from: ApertureValue.f4()))
+print(ApertureValue.f8.stopsDifference(from: ApertureValue.f4))
 // -2 stops (since f8 lets less light through than f4)
 
-print(ApertureValue.f8().compare(ApertureValue.f4()).rawValue)
+print(ApertureValue.f8.compare(ApertureValue.f4).rawValue)
 // -1  (ComparisonResult.orderedAscending)
 
-print(ApertureValue.f8().stopsDifference(from: ApertureValue.f4()))
+print(ApertureValue.f8.stopsDifference(from: ShutterSpeedValue.oneSecondShutterSpeed))
 // nil, since this isn't a valid comparison
 
-print(ApertureValue.f8().compare(ShutterSpeedValue.oneSecondShutterSpeed()).rawValue)
+print(ApertureValue.f8.compare(ShutterSpeedValue.oneSecondShutterSpeed).rawValue)
 // -100 (ExposureComparisonInvalid), since this isn't a valid comparison
 ```
 
@@ -39,16 +39,16 @@ In general, a postive stops value means "more light" or "a brighter image", and 
 ```swift
 let stops = ExposureStops(fromDecimalValue: 1.0)
 
-let f8 = ApertureValue.f8()
+let f8 = ApertureValue.f8
 print(f8.adding(stops)) // f/5.6
 
-let one250th = ShutterSpeedValue.oneTwoHundredFiftiethShutterSpeed()
+let one250th = ShutterSpeedValue.oneTwoHundredFiftiethShutterSpeed
 print(one250th.adding(stops)) // 1/125
 
-let iso100 = ISOValue.iso100()
+let iso100 = ISOValue.iso100
 print(iso100.adding(stops)) // ISO 200
 
-let zeroEV = ExposureCompensationValue.zeroEV()
+let zeroEV = ExposureCompensationValue.zeroEV
 print(zeroEV.adding(stops)) // 1 EV
 ```
 

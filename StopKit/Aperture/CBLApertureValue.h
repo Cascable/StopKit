@@ -11,28 +11,28 @@ NS_SWIFT_NAME(ApertureValue)
  @warning Most properties and all math methods will raise an exception when called. This value should only be used for
  comparison in order to avoid trying to do math with this value when encountered.
  */
-+(nonnull CBLApertureValue *)automaticAperture;
+@property (class, nonatomic, readonly, nonnull) CBLApertureValue *automaticAperture;
 
 /** Returns an instance representing f/2.8. */
-+(nonnull CBLApertureValue *)f2Point8;
+@property (class, nonatomic, readonly, nonnull) CBLApertureValue *f2Point8;
 
 /** Returns an instance representing f/4.0. */
-+(nonnull CBLApertureValue *)f4;
+@property (class, nonatomic, readonly, nonnull) CBLApertureValue *f4;
 
 /** Returns an instance representing f/5.6. */
-+(nonnull CBLApertureValue *)f5Point6;
+@property (class, nonatomic, readonly, nonnull) CBLApertureValue *f5Point6;
 
 /** Returns an instance representing f/8. */
-+(nonnull CBLApertureValue *)f8;
+@property (class, nonatomic, readonly, nonnull) CBLApertureValue *f8;
 
 /** Returns an instance representing f/11. */
-+(nonnull CBLApertureValue *)f11;
+@property (class, nonatomic, readonly, nonnull) CBLApertureValue *f11;
 
 /** Returns an instance representing f/16. */
-+(nonnull CBLApertureValue *)f16;
+@property (class, nonatomic, readonly, nonnull) CBLApertureValue *f16;
 
 /** Returns an instance representing f/22. */
-+(nonnull CBLApertureValue *)f22;
+@property (class, nonatomic, readonly, nonnull) CBLApertureValue *f22;
 
 /** Returns a new value for the given number of stops from f/8.
  

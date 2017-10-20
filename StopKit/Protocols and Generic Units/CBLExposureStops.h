@@ -13,7 +13,7 @@ NS_SWIFT_NAME(ExposureStops)
 @interface CBLExposureStops : NSObject <NSCopying>
 
 /** Returns a zero exposure stop vector. */
-+(nonnull CBLExposureStops *)zeroStops;
+@property (class, nonatomic, readonly, nonnull) CBLExposureStops *zeroStops;
 
 /** Returns a stop vector parsed from the given decimal value.
  

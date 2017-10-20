@@ -6,19 +6,19 @@ NS_SWIFT_NAME(ISOValue)
 @interface CBLISOValue : NSObject <CBLUniversalExposurePropertyValue>
 
 /** Returns an instance representing ISO 100. */
-+(nonnull CBLISOValue *)ISO100;
+@property (class, nonatomic, readonly, nonnull) CBLISOValue *ISO100;
 
 /** Returns an instance representing ISO 200. */
-+(nonnull CBLISOValue *)ISO200;
+@property (class, nonatomic, readonly, nonnull) CBLISOValue *ISO200;
 
 /** Returns an instance representing ISO 400. */
-+(nonnull CBLISOValue *)ISO400;
+@property (class, nonatomic, readonly, nonnull) CBLISOValue *ISO400;
 
 /** Returns an instance representing ISO 800. */
-+(nonnull CBLISOValue *)ISO800;
+@property (class, nonatomic, readonly, nonnull) CBLISOValue *ISO800;
 
 /** Returns an instance representing ISO 1600. */
-+(nonnull CBLISOValue *)ISO1600;
+@property (class, nonatomic, readonly, nonnull) CBLISOValue *ISO1600;
 
 /**
  Returns a singleton representing the "automatic" ISO value you might encounter when working with cameras.
@@ -26,7 +26,7 @@ NS_SWIFT_NAME(ISOValue)
  @warning Most properties and all math methods will raise an exception when called. This value should only be used for
  comparison in order to avoid trying to do math with this value when encountered.
  */
-+(nonnull CBLISOValue *)automaticISO;
+@property (class, nonatomic, readonly, nonnull) CBLISOValue *automaticISO;
 
 /** Returns a new ISO value for the given number of stops from ISO 100. 
  
