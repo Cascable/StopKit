@@ -15,6 +15,18 @@
     return self;
 }
 
+- (void)encodeWithCoder:(nonnull NSCoder *)aCoder {
+    [aCoder encodeObject:self.name forKey:@"name"];
+}
+
+- (nullable instancetype)initWithCoder:(nonnull NSCoder *)aDecoder {
+    if ([aDecoder containsValueForKey:@"name"]) {
+        return [self initWithName:[aDecoder decodeObjectForKey:@"name"]];
+    } else {
+        return nil;
+    }
+}
+
 -(id)copyWithZone:(NSZone *)zone {
     return self;
 }

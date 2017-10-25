@@ -93,6 +93,18 @@
     return [self initWithStopsFromASecond:[CBLExposureStops stopsFromDecimalValue:stops]];
 }
 
+- (void)encodeWithCoder:(nonnull NSCoder *)aCoder {
+    [aCoder encodeObject:self.stopsFromASecond forKey:@"stops"];
+}
+
+- (nullable instancetype)initWithCoder:(nonnull NSCoder *)aDecoder {
+    if ([aDecoder containsValueForKey:@"stops"]) {
+        return [self initWithStopsFromASecond:[aDecoder decodeObjectOfClass:[CBLExposureStops class] forKey:@"stops"]];
+    } else {
+        return nil;
+    }
+}
+
 -(id)copyWithZone:(NSZone *)zone {
     return [[CBLShutterSpeedValue alloc] initWithStopsFromASecond:self.stopsFromASecond];
 }

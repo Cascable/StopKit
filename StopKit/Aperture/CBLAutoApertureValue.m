@@ -13,6 +13,18 @@
     return self;
 }
 
+- (void)encodeWithCoder:(nonnull NSCoder *)aCoder {
+    [aCoder encodeObject:@"Auto" forKey:@"placeholder"];
+}
+
+- (nullable instancetype)initWithCoder:(nonnull NSCoder *)aDecoder {
+    if ([aDecoder containsValueForKey:@"placeholder"]) {
+        return [self init];
+    } else {
+        return nil;
+    }
+}
+
 -(id)copyWithZone:(NSZone *)zone {
     return self;
 }

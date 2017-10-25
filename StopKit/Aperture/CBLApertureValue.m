@@ -76,6 +76,18 @@
     return [self initWithStopsFromF8:[CBLExposureStops stopsFromDecimalValue:stops * -1.0]];
 }
 
+- (void)encodeWithCoder:(nonnull NSCoder *)aCoder {
+    [aCoder encodeObject:self.stopsFromF8 forKey:@"stops"];
+}
+
+- (nullable instancetype)initWithCoder:(nonnull NSCoder *)aDecoder {
+    if ([aDecoder containsValueForKey:@"stops"]) {
+        return [self initWithStopsFromF8:[aDecoder decodeObjectOfClass:[CBLExposureStops class] forKey:@"stops"]];
+    } else {
+        return nil;
+    }
+}
+
 -(id)copyWithZone:(NSZone *)zone {
     return [CBLApertureValue apertureValueWithStopsFromF8:self.stopsFromF8];
 }

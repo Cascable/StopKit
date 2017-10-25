@@ -31,6 +31,18 @@
     return self;
 }
 
+- (void)encodeWithCoder:(nonnull NSCoder *)aCoder {
+    [aCoder encodeObject:self.stopsFromZeroEV forKey:@"stops"];
+}
+
+- (nullable instancetype)initWithCoder:(nonnull NSCoder *)aDecoder {
+    if ([aDecoder containsValueForKey:@"stops"]) {
+        return [self initWithStopsFromZeroEV:[aDecoder decodeObjectOfClass:[CBLExposureStops class] forKey:@"stops"]];
+    } else {
+        return nil;
+    }
+}
+
 -(id)copyWithZone:(NSZone *)zone {
     return [[CBLExposureCompensationValue alloc] initWithStopsFromZeroEV:self.stopsFromZeroEV];
 }

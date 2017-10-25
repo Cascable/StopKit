@@ -4,7 +4,7 @@
 
 /** An object-based camera property value that can be used across camera types. */
 NS_SWIFT_NAME(UniversalPropertyValue)
-@protocol CBLUniversalPropertyValue <NSObject, NSCopying>
+@protocol CBLUniversalPropertyValue <NSObject, NSCopying, NSCoding>
 
 /** Returns a string succinctly describing the value. For debug only - not appropriate for user-facing UI. */
 -(nonnull NSString *)succinctDescription;

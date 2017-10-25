@@ -69,6 +69,18 @@
     return [self initWithStopsFromISO100:[CBLExposureStops stopsFromDecimalValue:value]];
 }
 
+- (void)encodeWithCoder:(nonnull NSCoder *)aCoder {
+    [aCoder encodeObject:self.stopsFrom100 forKey:@"stops"];
+}
+
+- (nullable instancetype)initWithCoder:(nonnull NSCoder *)aDecoder {
+    if ([aDecoder containsValueForKey:@"stops"]) {
+        return [self initWithStopsFromISO100:[aDecoder decodeObjectOfClass:[CBLExposureStops class] forKey:@"stops"]];
+    } else {
+        return nil;
+    }
+}
+
 -(id)copyWithZone:(NSZone *)zone {
     return [[CBLISOValue alloc] initWithStopsFromISO100:self.stopsFrom100];
 }

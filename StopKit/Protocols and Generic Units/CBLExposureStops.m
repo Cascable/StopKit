@@ -117,6 +117,24 @@
     return self;
 }
 
+- (void)encodeWithCoder:(nonnull NSCoder *)aCoder {
+    [aCoder encodeInteger:self.wholeStopsFromZero forKey:@"wholeStops"];
+    [aCoder encodeInteger:self.fraction forKey:@"fraction"];
+    [aCoder encodeBool:self.isNegative forKey:@"isNegative"];
+}
+
+- (nullable instancetype)initWithCoder:(nonnull NSCoder *)aDecoder {
+    if ([aDecoder containsValueForKey:@"wholeStops"] &&
+        [aDecoder containsValueForKey:@"fraction"] &&
+        [aDecoder containsValueForKey:@"isNegative"]) {
+        return [self initWithWholeStops:[aDecoder decodeIntegerForKey:@"wholeStops"]
+                               fraction:[aDecoder decodeIntegerForKey:@"fraction"]
+                             isNegative:[aDecoder decodeBoolForKey:@"isNegative"]];
+    } else {
+        return nil;
+    }
+}
+
 -(id)copyWithZone:(NSZone *)zone {
     return [[CBLExposureStops alloc] initWithWholeStops:self.wholeStopsFromZero
                                                fraction:self.fraction
@@ -203,7 +221,5 @@
 
     return value;
 }
-
-
 
 @end
