@@ -57,7 +57,7 @@ NS_SWIFT_NAME(ExposureStops)
 -(NSComparisonResult)compare:(nonnull CBLExposureStops *)other;
 
 /** Returns a string succinctly describing the value. For debug only - not appropriate for user-facing UI. */
--(nonnull NSString *)succinctDescription;
+@property (nonatomic, readonly, copy, nonnull) NSString *succinctDescription;
 
 /** 
  Returns a new object containing the result of adding the passed object to the receiver.
@@ -76,7 +76,7 @@ NS_SWIFT_NAME(ExposureStops)
 -(nonnull CBLExposureStops *)differenceFrom:(nonnull CBLExposureStops *)stops;
 
 /** Returns an approximate decimal representation of the receiver. */
--(double)approximateDecimalValue;
+@property (nonatomic, readonly) double approximateDecimalValue;
 
 /** Returns `YES` if the receiver represents a negative value, otherwise `NO`. */
 @property (nonatomic, readonly) BOOL isNegative;

@@ -7,10 +7,10 @@ NS_SWIFT_NAME(UniversalPropertyValue)
 @protocol CBLUniversalPropertyValue <NSObject, NSCopying, NSCoding>
 
 /** Returns a string succinctly describing the value. For debug only - not appropriate for user-facing UI. */
--(nonnull NSString *)succinctDescription;
+@property (nonatomic, readonly, copy, nonnull) NSString *succinctDescription;
 
 /** Returns the localized display string for the receiver. */
--(nullable NSString *)localizedDisplayValue;
+@property (nonatomic, readonly, copy, nullable) NSString *localizedDisplayValue;
 
 @end
 

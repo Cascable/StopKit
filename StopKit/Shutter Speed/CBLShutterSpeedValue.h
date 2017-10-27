@@ -70,7 +70,7 @@ NS_SWIFT_NAME(ShutterSpeedValue)
 @property (nonatomic, readonly) BOOL isBulb;
 
 /** Returns the approximate numeric duration of the receiver, in seconds. */
--(NSTimeInterval)approximateTimeInterval;
+@property (nonatomic, readonly) NSTimeInterval approximateTimeInterval;
 
 /**
  Returns a string containing a fractional representation of the receiver.
@@ -78,12 +78,12 @@ NS_SWIFT_NAME(ShutterSpeedValue)
  This method is not typically appropriate for user-facing text, since for speeds slower 
  than one second it'll return top-heavy fractions (i.e., 2/1 for two seconds). 
  */
--(nonnull NSString *)fractionalRepresentation;
+@property (nonatomic, readonly, copy, nonnull) NSString *fractionalRepresentation;
 
 /** Returns the upper fractional numeric of the receiver. I.e., the "1" in "1/2". */
--(NSUInteger)upperFractionalValue;
+@property (nonatomic, readonly) NSUInteger upperFractionalValue;
 
 /** Returns the lower fractional numeric of the receiver. I.e., the "2" in "1/2". */
--(NSUInteger)lowerFractionalValue;
+@property (nonatomic, readonly) NSUInteger lowerFractionalValue;
 
 @end
