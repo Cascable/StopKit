@@ -34,7 +34,7 @@ NS_SWIFT_NAME(ShutterSpeedValue)
  @param high The higher value.
  @return Returns an array of shutter speeds between (and including) `low` and `high`.
  */
-+(nullable NSArray *)shutterSpeedsBetween:(nonnull CBLShutterSpeedValue *)low and:(nonnull CBLShutterSpeedValue *)high;
++(nullable NSArray <CBLShutterSpeedValue *> *)shutterSpeedsBetween:(nonnull CBLShutterSpeedValue *)low and:(nonnull CBLShutterSpeedValue *)high;
 
 /** Initializes a new shutter speed value with the given number of stops from one second.
  
