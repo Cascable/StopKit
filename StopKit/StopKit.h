@@ -2,5 +2,8 @@
 #import "CBLExposureStops.h"
 #import "CBLExposureCompensationValue.h"
 #import "CBLApertureValue.h"
+#import "CBLAutoApertureValue.h"
 #import "CBLShutterSpeedValue.h"
+#import "CBLIndeterminateShutterSpeedValue.h"
 #import "CBLISOValue.h"
+#import "CBLAutoISOValue.h"

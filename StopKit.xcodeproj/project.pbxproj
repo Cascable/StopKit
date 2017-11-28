@@ -23,17 +23,17 @@
 /* Begin PBXBuildFile section */
 		50310A481F99D98500D36CE1 /* StopKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A461F99D98500D36CE1 /* StopKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50310A501F99DA6900D36CE1 /* CBLUniversalPropertyValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A4F1F99DA6900D36CE1 /* CBLUniversalPropertyValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		50310A561F99DA7D00D36CE1 /* CBLAutoISOValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A521F99DA7D00D36CE1 /* CBLAutoISOValue.h */; };
+		50310A561F99DA7D00D36CE1 /* CBLAutoISOValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A521F99DA7D00D36CE1 /* CBLAutoISOValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50310A571F99DA7D00D36CE1 /* CBLAutoISOValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 50310A531F99DA7D00D36CE1 /* CBLAutoISOValue.m */; };
 		50310A581F99DA7D00D36CE1 /* CBLISOValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A541F99DA7D00D36CE1 /* CBLISOValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50310A591F99DA7D00D36CE1 /* CBLISOValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 50310A551F99DA7D00D36CE1 /* CBLISOValue.m */; };
 		50310A5D1F99DA9800D36CE1 /* CBLShutterSpeedValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A5B1F99DA9800D36CE1 /* CBLShutterSpeedValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50310A5E1F99DA9800D36CE1 /* CBLShutterSpeedValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 50310A5C1F99DA9800D36CE1 /* CBLShutterSpeedValue.m */; };
 		50310A611F99DAAD00D36CE1 /* CBLIndeterminateShutterSpeedValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 50310A5F1F99DAAD00D36CE1 /* CBLIndeterminateShutterSpeedValue.m */; };
-		50310A621F99DAAD00D36CE1 /* CBLIndeterminateShutterSpeedValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A601F99DAAD00D36CE1 /* CBLIndeterminateShutterSpeedValue.h */; };
+		50310A621F99DAAD00D36CE1 /* CBLIndeterminateShutterSpeedValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A601F99DAAD00D36CE1 /* CBLIndeterminateShutterSpeedValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50310A681F99DABC00D36CE1 /* CBLApertureValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 50310A641F99DABC00D36CE1 /* CBLApertureValue.m */; };
 		50310A691F99DABC00D36CE1 /* CBLApertureValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A651F99DABC00D36CE1 /* CBLApertureValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		50310A6A1F99DABC00D36CE1 /* CBLAutoApertureValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A661F99DABC00D36CE1 /* CBLAutoApertureValue.h */; };
+		50310A6A1F99DABC00D36CE1 /* CBLAutoApertureValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A661F99DABC00D36CE1 /* CBLAutoApertureValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50310A6B1F99DABC00D36CE1 /* CBLAutoApertureValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 50310A671F99DABC00D36CE1 /* CBLAutoApertureValue.m */; };
 		50310A6F1F99DAD400D36CE1 /* CBLExposureCompensationValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 50310A6D1F99DAD400D36CE1 /* CBLExposureCompensationValue.m */; };
 		50310A701F99DAD400D36CE1 /* CBLExposureCompensationValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A6E1F99DAD400D36CE1 /* CBLExposureCompensationValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -53,11 +53,11 @@
 		509B6CD41F99E74800F0E888 /* UniversalExposureCompensations.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50310A7B1F99DCFC00D36CE1 /* UniversalExposureCompensations.strings */; };
 		509B6CD51F99E74800F0E888 /* UniversalShutterSpeeds.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50310A811F99DD5D00D36CE1 /* UniversalShutterSpeeds.strings */; };
 		509B6CD61F99E74800F0E888 /* UniversalISOValues.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50310A871F99DD7400D36CE1 /* UniversalISOValues.strings */; };
-		509B6CD71F99E74E00F0E888 /* CBLAutoISOValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A521F99DA7D00D36CE1 /* CBLAutoISOValue.h */; };
+		509B6CD71F99E74E00F0E888 /* CBLAutoISOValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A521F99DA7D00D36CE1 /* CBLAutoISOValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		509B6CD81F99E75200F0E888 /* CBLISOValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A541F99DA7D00D36CE1 /* CBLISOValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		509B6CD91F99E75600F0E888 /* CBLIndeterminateShutterSpeedValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A601F99DAAD00D36CE1 /* CBLIndeterminateShutterSpeedValue.h */; };
+		509B6CD91F99E75600F0E888 /* CBLIndeterminateShutterSpeedValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A601F99DAAD00D36CE1 /* CBLIndeterminateShutterSpeedValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		509B6CDA1F99E75800F0E888 /* CBLShutterSpeedValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A5B1F99DA9800D36CE1 /* CBLShutterSpeedValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		509B6CDB1F99E75C00F0E888 /* CBLAutoApertureValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A661F99DABC00D36CE1 /* CBLAutoApertureValue.h */; };
+		509B6CDB1F99E75C00F0E888 /* CBLAutoApertureValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A661F99DABC00D36CE1 /* CBLAutoApertureValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		509B6CDC1F99E76200F0E888 /* CBLApertureValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A651F99DABC00D36CE1 /* CBLApertureValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		509B6CDD1F99E76500F0E888 /* CBLExposureCompensationValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A6E1F99DAD400D36CE1 /* CBLExposureCompensationValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		509B6CDE1F99E76900F0E888 /* CBLExposureStops.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A711F99DB0F00D36CE1 /* CBLExposureStops.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -310,7 +310,7 @@
 		50310A3A1F99D98500D36CE1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Cascable AB";
 				TargetAttributes = {
 					50310A421F99D98500D36CE1 = {
@@ -662,7 +662,7 @@
 		509B6CC71F99E67600F0E888 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -689,7 +689,7 @@
 		509B6CC81F99E67600F0E888 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
