@@ -36,6 +36,14 @@ NS_SWIFT_NAME(ShutterSpeedValue)
  */
 +(nullable NSArray <CBLShutterSpeedValue *> *)shutterSpeedsBetween:(nonnull CBLShutterSpeedValue *)low and:(nonnull CBLShutterSpeedValue *)high;
 
+/**
+ Returns the significant fraction integer for the given number of stops from 1 second.
+
+ @param stops The stops from one second.
+ @return The value.
+ */
++(NSUInteger)significantFractionIntegerForStopsFromASecond:(nonnull CBLExposureStops *)stops NS_SWIFT_NAME(significantFraction(for:));
+
 /** Initializes a new shutter speed value with the given number of stops from one second.
  
  This is the designated initializer for this class.

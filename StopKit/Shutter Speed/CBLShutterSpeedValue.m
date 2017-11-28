@@ -127,7 +127,7 @@
         // Return 1/x representation.
         return [NSString stringWithFormat:@"%@%@",
                 CBLStopKitLocalizedString(@"OneOver", @"UniversalShutterSpeeds"),
-                @([self valueByStops:self.stopsFromASecond])];
+                @([CBLShutterSpeedValue significantFractionIntegerForStopsFromASecond:self.stopsFromASecond])];
     } else {
         // Return decimal representation.
         return [self.formatter stringFromNumber:@(self.approximateTimeInterval)];
@@ -232,13 +232,13 @@
     if (!self.stopsFromASecond.isNegative) {
         return 1;
     } else {
-        return [self valueByStops:self.stopsFromASecond];
+        return [CBLShutterSpeedValue significantFractionIntegerForStopsFromASecond:self.stopsFromASecond];
     }
 }
 
 -(NSUInteger)upperFractionalValue {
     if (!self.stopsFromASecond.isNegative) {
-        return [self valueByStops:self.stopsFromASecond];
+        return [CBLShutterSpeedValue significantFractionIntegerForStopsFromASecond:self.stopsFromASecond];
     } else {
         return 1;
     }
@@ -250,7 +250,7 @@
 
 #define SHUTTER_SPEED_MATHEMATICALLY_CORRECT 0
 
--(NSUInteger)valueByStops:(CBLExposureStops *)stops {
++(NSUInteger)significantFractionIntegerForStopsFromASecond:(CBLExposureStops *)stops {
 
     if (SHUTTER_SPEED_MATHEMATICALLY_CORRECT) {
         return pow(2.0, stops.approximateDecimalValue);
