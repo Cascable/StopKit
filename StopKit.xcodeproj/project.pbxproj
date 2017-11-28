@@ -62,6 +62,7 @@
 		509B6CDD1F99E76500F0E888 /* CBLExposureCompensationValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A6E1F99DAD400D36CE1 /* CBLExposureCompensationValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		509B6CDE1F99E76900F0E888 /* CBLExposureStops.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A711F99DB0F00D36CE1 /* CBLExposureStops.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		509B6CDF1F99E76D00F0E888 /* CBLUniversalPropertyValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A4F1F99DA6900D36CE1 /* CBLUniversalPropertyValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		50CDCC131FCDB7B400BAA22C /* CBLExposureCompensationValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 50310A6D1F99DAD400D36CE1 /* CBLExposureCompensationValue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -423,6 +424,7 @@
 			files = (
 				509B6CCD1F99E74300F0E888 /* CBLExposureStops.m in Sources */,
 				509B6CCF1F99E74300F0E888 /* CBLAutoApertureValue.m in Sources */,
+				50CDCC131FCDB7B400BAA22C /* CBLExposureCompensationValue.m in Sources */,
 				509B6CCE1F99E74300F0E888 /* CBLApertureValue.m in Sources */,
 				509B6CD31F99E74300F0E888 /* CBLAutoISOValue.m in Sources */,
 				509B6CD21F99E74300F0E888 /* CBLISOValue.m in Sources */,
