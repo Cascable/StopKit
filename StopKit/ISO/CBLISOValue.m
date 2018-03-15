@@ -168,6 +168,7 @@
     // Adjustments based on industry standards.
     NSMutableDictionary *adjustments = [NSMutableDictionary new];
 
+    adjustments[@(33)] = @(64);
     adjustments[@(66)] = @(80);
     adjustments[@(133)] = @(125);
     adjustments[@(150)] = @(140);
@@ -195,6 +196,8 @@
     adjustments[@(21333)] = @(20000);
     adjustments[@(34133)] = @(32000);
     adjustments[@(42666)] = @(40000);
+    adjustments[@(68266)] = @(64000);
+    adjustments[@(85333)] = @(80000);
 
     if (adjustments[@(value)] != nil) {
         return [adjustments[@(value)] unsignedIntegerValue];
