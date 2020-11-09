@@ -311,7 +311,7 @@
 		50310A3A1F99D98500D36CE1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = "Cascable AB";
 				TargetAttributes = {
 					50310A421F99D98500D36CE1 = {
@@ -399,7 +399,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"${CARTHAGE}\" = \"YES\" ]\nthen\n    echo \"Building under carthage - skipping universal binary\"\n    exit 0\nfi\n\n\nif [ -z \"${NESTED_BUILD_FLAG}\" ]\nthen\n    echo \"Seem to be clear for nested\"\nelse\n    echo \"Nested build detected - bailing!\"\n    exit 0\nfi\n\nTHIS_HALF_BINARY_PATH=\"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nSCHEME_NAME=\"StopKit iOS\"\n\nif [ \"${PLATFORM_NAME}\" = \"iphonesimulator\" ]\nthen\n    echo \"We need to build for device!\"\n    xcodebuild -UseSanitizedBuildSystemEnvironment=YES -project \"${PROJECT_NAME}.xcodeproj\" -scheme \"${SCHEME_NAME}\" -sdk iphoneos -configuration \"${CONFIGURATION}\" build CONFIGURATION_BUILD_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphoneos\" NESTED_BUILD_FLAG=1 > /dev/null\n\n    OTHER_HALF_BINARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${EXECUTABLE_PATH}\"\n    OTHER_HALF_ARCHS=(\"armv7 arm64\")\n    THIS_HALF_ARCHS=(\"i386 x86_64\")\n\nelse\n    echo \"We need to build for simulator!\"\n\n    #IMPORTANT: This will come back to bite you in the future:\n    # The -destination 'platform=…OS=latest' part is required due to a bug in Xcode 7.2.\n    # When this workaround breaks the build in the future, you should remove that parameter\n    # first. Sources:\n    # - https://openradar.appspot.com/23857648,\n    # - http://stackoverflow.com/questions/34284835/cannot-build-for-simulator-with-iphonesimulator9-2\n\n    # ALSO the `-UseSanitizedBuildSystemEnvironment=YES` flag is required to stop Xcode spazzing out\n    # about entitlements. It seems building a device binary in a Run Script phase of a simulator build\n    # causes the environment to break. Source:\n    # - https://github.com/Carthage/Carthage/issues/992\n\n    xcodebuild -UseSanitizedBuildSystemEnvironment=YES -project \"${PROJECT_NAME}.xcodeproj\" -scheme \"${SCHEME_NAME}\" -sdk iphonesimulator -configuration \"${CONFIGURATION}\" -destination 'platform=iOS Simulator,name=iPhone 6s,OS=latest' build CONFIGURATION_BUILD_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator\" NESTED_BUILD_FLAG=1 > /dev/null\n\n    OTHER_HALF_BINARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${EXECUTABLE_PATH}\"\n    OTHER_HALF_ARCHS=(\"i386 x86_64\")\n    THIS_HALF_ARCHS=(\"armv7 arm64\")\nfi\n\n######################\n# Extract the individual architectures\n######################\n\necho \"This half is at $THIS_HALF_BINARY_PATH\"\necho \"Other half is at $OTHER_HALF_BINARY_PATH\"\n\nEXTRACTED_ARCHS=()\n\necho \"Archs here: $THIS_HALF_ARCHS\"\necho \"Archs there: $OTHER_HALF_ARCHS\"\n\nfor ARCH in $THIS_HALF_ARCHS\ndo\n    echo \"Extracting $ARCH\"\n    lipo -extract \"$ARCH\" \"$THIS_HALF_BINARY_PATH\" -o \"$THIS_HALF_BINARY_PATH-$ARCH\"\n    EXTRACTED_ARCHS+=(\"$THIS_HALF_BINARY_PATH-$ARCH\")\ndone\n\nfor ARCH in $OTHER_HALF_ARCHS\ndo\n    echo \"Extracting $ARCH\"\n    lipo -extract \"$ARCH\" \"$OTHER_HALF_BINARY_PATH\" -o \"$THIS_HALF_BINARY_PATH-$ARCH\"\n    EXTRACTED_ARCHS+=(\"$THIS_HALF_BINARY_PATH-$ARCH\")\ndone\n\n######################\n# Merge the extracted architecture back together\n######################\n\nMERGED_TEMP_BINARY_PATH=\"$THIS_HALF_BINARY_PATH-merged\"\n\necho \"Merging extracted architectures: ${ARCHS}\"\nlipo -o \"$MERGED_TEMP_BINARY_PATH\" -create \"${EXTRACTED_ARCHS[@]}\"\nrm \"${EXTRACTED_ARCHS[@]}\"\n\nrm \"$THIS_HALF_BINARY_PATH\"\nmv \"$MERGED_TEMP_BINARY_PATH\" \"$THIS_HALF_BINARY_PATH\"\n\nlipo -info \"$THIS_HALF_BINARY_PATH\"\n\n";
+			shellScript = "if [ \"${CARTHAGE}\" = \"YES\" ] \nthen\n    echo \"Building under carthage - skipping universal binary\"\n    exit 0\nfi\n\nif [ -z \"${NESTED_BUILD_FLAG}\" ]\nthen\n    echo \"Seem to be clear for nested\"\nelse\n    echo \"Nested build detected - bailing!\"\n    exit 0\nfi\n\nTHIS_HALF_BINARY_PATH=\"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nSCHEME_NAME=\"${TARGET_NAME}\"\n\nif [ \"${PLATFORM_NAME}\" = \"iphonesimulator\" ]\nthen\n    echo \"We need to build for device!\"\n    xcodebuild -UseSanitizedBuildSystemEnvironment=YES -project \"${PROJECT_NAME}.xcodeproj\" -scheme \"${SCHEME_NAME}\" -sdk iphoneos -configuration \"${CONFIGURATION}\" build CONFIGURATION_BUILD_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphoneos\" NESTED_BUILD_FLAG=1 OBJROOT=\"$OBJROOT/DependentBuilds\" > /dev/null\n\n    OTHER_HALF_BINARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${EXECUTABLE_PATH}\"\n    OTHER_HALF_ARCHS=(\"armv7 arm64\")\n    THIS_HALF_ARCHS=(\"x86_64\")\nelse\n    echo \"We need to build for simulator!\"\n\n    #IMPORTANT: This will come back to bite you in the future:\n    # The -destination 'platform=…OS=latest' part is required due to a bug in Xcode 7.2.\n    # When this workaround breaks the build in the future, you should remove that parameter\n    # first. Sources:\n    # - https://openradar.appspot.com/23857648,\n    # - http://stackoverflow.com/questions/34284835/cannot-build-for-simulator-with-iphonesimulator9-2\n\n    # ALSO the `-UseSanitizedBuildSystemEnvironment=YES` flag is required to stop Xcode spazzing out\n    # about entitlements. It seems building a device binary in a Run Script phase of a simulator build\n    # causes the environment to break. Source:\n    # - https://github.com/Carthage/Carthage/issues/992\n\n    xcodebuild -UseSanitizedBuildSystemEnvironment=YES -project \"${PROJECT_NAME}.xcodeproj\" -scheme \"${SCHEME_NAME}\" -sdk iphonesimulator -configuration \"${CONFIGURATION}\" -destination 'platform=iOS Simulator,name=iPhone 8,OS=latest' build CONFIGURATION_BUILD_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator\" NESTED_BUILD_FLAG=1 OBJROOT=\"$OBJROOT/DependentBuilds\" > /dev/null\n\n    OTHER_HALF_BINARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${EXECUTABLE_PATH}\"\n    OTHER_HALF_ARCHS=(\"x86_64\")\n    THIS_HALF_ARCHS=(\"armv7 arm64\")\nfi\n\n######################\n# Extract the individual architectures\n######################\n\necho \"This half is at $THIS_HALF_BINARY_PATH\"\necho \"Other half is at $OTHER_HALF_BINARY_PATH\"\n\nEXTRACTED_ARCHS=()\n\necho \"Archs here: $THIS_HALF_ARCHS\"\necho \"Archs there: $OTHER_HALF_ARCHS\"\n\nNUMBER_OF_ARCHS_IN_THIS_HALF=$(wc -w <<< \"$THIS_HALF_ARCHS\" | xargs)\nNUMBER_OF_ARCHS_IN_OTHER_HALF=$(wc -w <<< \"$OTHER_HALF_ARCHS\" | xargs)\n\nif [ $NUMBER_OF_ARCHS_IN_THIS_HALF -eq 1 ]; then\n    echo \"Executable only has one architecture - nothing to do\"\n    cp \"$THIS_HALF_BINARY_PATH\" \"$THIS_HALF_BINARY_PATH-$THIS_HALF_ARCHS\"\n    EXTRACTED_ARCHS+=(\"$THIS_HALF_BINARY_PATH-$THIS_HALF_ARCHS\")\nelse\n    for ARCH in $THIS_HALF_ARCHS\n    do\n        echo \"Extracting $ARCH\"\n        lipo -extract \"$ARCH\" \"$THIS_HALF_BINARY_PATH\" -o \"$THIS_HALF_BINARY_PATH-$ARCH\"\n        EXTRACTED_ARCHS+=(\"$THIS_HALF_BINARY_PATH-$ARCH\")\n    done\nfi\n\nif [ $NUMBER_OF_ARCHS_IN_OTHER_HALF -eq 1 ]; then\n    echo \"Executable only has one architecture - nothing to do\"\n    cp \"$OTHER_HALF_BINARY_PATH\" \"$THIS_HALF_BINARY_PATH-$OTHER_HALF_ARCHS\"\n    EXTRACTED_ARCHS+=(\"$THIS_HALF_BINARY_PATH-$OTHER_HALF_ARCHS\")\nelse\n    for ARCH in $OTHER_HALF_ARCHS\n    do\n        echo \"Extracting $ARCH\"\n        lipo -extract \"$ARCH\" \"$OTHER_HALF_BINARY_PATH\" -o \"$THIS_HALF_BINARY_PATH-$ARCH\"\n        EXTRACTED_ARCHS+=(\"$THIS_HALF_BINARY_PATH-$ARCH\")\n    done\nfi\n\n######################\n# Merge the extracted architecture back together\n######################\n\nMERGED_TEMP_BINARY_PATH=\"$THIS_HALF_BINARY_PATH-merged\"\n\necho \"Merging extracted architectures: ${ARCHS}\"\nlipo -o \"$MERGED_TEMP_BINARY_PATH\" -create \"${EXTRACTED_ARCHS[@]}\"\nrm \"${EXTRACTED_ARCHS[@]}\"\n\nrm \"$THIS_HALF_BINARY_PATH\"\nmv \"$MERGED_TEMP_BINARY_PATH\" \"$THIS_HALF_BINARY_PATH\"\n\nlipo -info \"$THIS_HALF_BINARY_PATH\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -506,6 +506,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -567,6 +568,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -599,6 +601,8 @@
 		50310A4C1F99D98500D36CE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"ARCHS[sdk=iphonesimulator*]" = x86_64;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
@@ -626,6 +630,8 @@
 		50310A4D1F99D98500D36CE1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"ARCHS[sdk=iphonesimulator*]" = x86_64;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
@@ -656,7 +662,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EB5BP6YJ4R;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -666,7 +671,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EB5BP6YJ4R;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -689,6 +693,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = se.cascable.StopKit;
 				PRODUCT_NAME = StopKit;
 				PROVISIONING_PROFILE_SPECIFIER = "";

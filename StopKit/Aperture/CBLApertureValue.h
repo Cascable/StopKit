@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import "CBLUniversalPropertyValue.h"
+#import <StopKit/CBLUniversalPropertyValue.h>
 
 /** This class represents the aperture "f-stops" exposure property. */
 NS_SWIFT_NAME(ApertureValue)

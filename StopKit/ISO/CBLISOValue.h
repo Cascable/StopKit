@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import "CBLUniversalPropertyValue.h"
+#import <StopKit/CBLUniversalPropertyValue.h>
 
 /** This class represents the ISO exposure property. */
 NS_SWIFT_NAME(ISOValue)

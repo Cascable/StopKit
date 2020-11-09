@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
-#import "CBLUniversalPropertyValue.h"
-#import "CBLExposureStops.h"
+#import <StopKit/CBLUniversalPropertyValue.h>
+#import <StopKit/CBLExposureStops.h>
 
 @protocol CBLUniversalExposurePropertyValue;
 

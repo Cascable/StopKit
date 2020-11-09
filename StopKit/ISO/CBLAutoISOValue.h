@@ -1,4 +1,4 @@
-#import "CBLISOValue.h"
+#import <StopKit/CBLISOValue.h>
 
 NS_SWIFT_NAME(AutoISOValue)
 @interface CBLAutoISOValue : CBLISOValue
