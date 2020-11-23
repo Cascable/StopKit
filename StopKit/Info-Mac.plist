@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>FMWK</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1</string>
+	<string>1.1.1</string>
 	<key>CFBundleVersion</key>
 	<string>CBL_STOPKIT_BUNDLE_VERSION</string>
 	<key>NSHumanReadableCopyright</key>
