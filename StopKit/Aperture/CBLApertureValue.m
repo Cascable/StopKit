@@ -93,7 +93,7 @@
 }
 
 -(BOOL)isEqual:(id)object {
-    if (![object isKindOfClass:[self class]]) {
+    if (![object isKindOfClass:[self class]] || [object isKindOfClass:[CBLAutoApertureValue class]]) {
         return NO;
     }
     return [self.stopsFromF8 isEqual:[object stopsFromF8]];
