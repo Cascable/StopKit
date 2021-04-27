@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -17,20 +17,6 @@
 			);
 			name = "Version Header File Generation";
 			productName = "Version Header File Generation";
-		};
-		AB55D70A25BF210A00E92004 /* StopKit.xcframework */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = AB55D70D25BF210A00E92004 /* Build configuration list for PBXAggregateTarget "StopKit.xcframework" */;
-			buildPhases = (
-				AB55D71225BF214200E92004 /* Build StopKit Mac */,
-				AB55D71325BF215900E92004 /* Build StopKit iOS Simulator */,
-				AB55D71425BF216300E92004 /* Build StopKit iOS Device */,
-				AB55D71525BF219700E92004 /* Assemble XCFramework */,
-			);
-			dependencies = (
-			);
-			name = StopKit.xcframework;
-			productName = StopKit.xcframework;
 		};
 /* End PBXAggregateTarget section */
 
@@ -324,7 +310,8 @@
 		50310A3A1F99D98500D36CE1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1240;
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "Cascable AB";
 				TargetAttributes = {
 					50310A421F99D98500D36CE1 = {
@@ -338,9 +325,6 @@
 					509B6CC11F99E67600F0E888 = {
 						CreatedOnToolsVersion = 9.0.1;
 						ProvisioningStyle = Manual;
-					};
-					AB55D70A25BF210A00E92004 = {
-						CreatedOnToolsVersion = 12.3;
 					};
 				};
 			};
@@ -361,7 +345,6 @@
 				50310A421F99D98500D36CE1 /* StopKit iOS */,
 				509B6CC11F99E67600F0E888 /* StopKit Mac */,
 				50310A8A1F99DFA500D36CE1 /* Version Header File Generation */,
-				AB55D70A25BF210A00E92004 /* StopKit.xcframework */,
 			);
 		};
 /* End PBXProject section */
@@ -403,81 +386,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "GIT_RELEASE_VERSION=$(git describe --tags --always --dirty --long)\nGIT_RELEASE_VERSION=${GIT_RELEASE_VERSION/-0-/-}\n\nCOMMITS=$(git rev-list HEAD | wc -l)\nCOMMITS=$(($COMMITS))\n\nmkdir -p \"$BUILD_DIR\"\n\necho \"#define CBL_STOPKIT_VERBOSE_VERSION ${GIT_RELEASE_VERSION#*v}\" > \"$BUILD_DIR/CBLStopKitVersions.h\"\necho \"#define CBL_STOPKIT_BUNDLE_VERSION ${COMMITS}\" >> \"$BUILD_DIR/CBLStopKitVersions.h\"\n\ndefaults write \"$BUILD_DIR/CBLStopKitVersions.plist\" CBLVerboseVersionString \"${GIT_RELEASE_VERSION#*v}\"\ndefaults write \"$BUILD_DIR/CBLStopKitVersions.plist\" CFBundleVersion \"${COMMITS}\"\n\necho \"Written to $BUILD_DIR/CBLStopKitVersions.h\"\n";
-		};
-		AB55D71225BF214200E92004 /* Build StopKit Mac */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Build StopKit Mac";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "xcodebuild -scheme \"StopKit Mac\" -destination \"generic/platform=OS X\" -configuration ${CONFIGURATION} BUILD_LIBRARY_FOR_DISTRIBUTION=YES\n\n\n\n\n\n\n\n\n\n";
-		};
-		AB55D71325BF215900E92004 /* Build StopKit iOS Simulator */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Build StopKit iOS Simulator";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "xcodebuild -scheme \"StopKit iOS\" -destination \"generic/platform=iOS Simulator\" -configuration ${CONFIGURATION} BUILD_LIBRARY_FOR_DISTRIBUTION=YES\n\n";
-		};
-		AB55D71425BF216300E92004 /* Build StopKit iOS Device */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Build StopKit iOS Device";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "xcodebuild -scheme \"StopKit iOS\" -destination \"generic/platform=iOS\" -configuration ${CONFIGURATION} BUILD_LIBRARY_FOR_DISTRIBUTION=YES\n\n";
-		};
-		AB55D71525BF219700E92004 /* Assemble XCFramework */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Assemble XCFramework";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Cleaning the previous builds.\nDIST_DIR=\"${BUILT_PRODUCTS_DIR}/Distribution\"\nrm -rf \"${DIST_DIR}\"\nmkdir -p \"${DIST_DIR}\"\n\n# Create a command to build XCFramework.\nfunction add_framework() {\n  local framework_path=\"$1/StopKit.framework\"\n  local dysm_path=\"$1/StopKit.framework.dSYM\"\n  if [ -d \"${framework_path}\" ]; then\n      XC_FRAMEWORKS+=( -framework \"${framework_path}\")\n  fi\n  echo \"Looking for dSYM at ${dysm_path}\"\n  if [ -d \"${dysm_path}\" ]; then\n      echo \"Copying dSYM to $2\"\n      cp -r \"${dysm_path}\" \"$2\"\n  fi\n}\nadd_framework \"${SRCROOT}/build/${CONFIGURATION}\" \"${DIST_DIR}/StopKit-Mac.dSYM\"\nfor SDK in iphoneos iphonesimulator appletvos appletvsimulator maccatalyst; do\n  add_framework \"${SRCROOT}/build/${CONFIGURATION}-${SDK}\" \"${DIST_DIR}/StopKit-${SDK}.dSYM\"\ndone\n\n# Build XCFramework.\nxcodebuild -create-xcframework \"${XC_FRAMEWORKS[@]}\" -output \"${DIST_DIR}/StopKit.xcframework\"\n\nFINAL_DIST_DIR=\"${SRCROOT}/build/Distribution\"\nrm -rf \"${FINAL_DIST_DIR}\"\ncp -a \"${DIST_DIR}\" \"${FINAL_DIST_DIR}\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -693,11 +601,7 @@
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MARKETING_VERSION = 1.1.2;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = se.cascable.StopKit;
@@ -726,11 +630,7 @@
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MARKETING_VERSION = 1.1.2;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = se.cascable.StopKit;
@@ -777,11 +677,7 @@
 				INFOPLIST_PREFIX_HEADER = "${BUILD_DIR}/CBLStopKitVersions.h";
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MARKETING_VERSION = 1.1.2;
 				ONLY_ACTIVE_ARCH = NO;
@@ -810,11 +706,7 @@
 				INFOPLIST_PREFIX_HEADER = "${BUILD_DIR}/CBLStopKitVersions.h";
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = se.cascable.StopKit;
@@ -822,24 +714,6 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
-			};
-			name = Release;
-		};
-		AB55D70B25BF210A00E92004 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				OBJROOT = "$(SYMROOT)/../aggregate_build";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		AB55D70C25BF210A00E92004 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				OBJROOT = "$(SYMROOT)/../aggregate_build";
-				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -878,15 +752,6 @@
 			buildConfigurations = (
 				509B6CC71F99E67600F0E888 /* Debug */,
 				509B6CC81F99E67600F0E888 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AB55D70D25BF210A00E92004 /* Build configuration list for PBXAggregateTarget "StopKit.xcframework" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AB55D70B25BF210A00E92004 /* Debug */,
-				AB55D70C25BF210A00E92004 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
