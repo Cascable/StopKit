@@ -36,6 +36,10 @@
     return [[self succinctDescription] isEqual:[object succinctDescription]];
 }
 
+-(BOOL)isDeterminate {
+    return NO;
+}
+
 -(NSComparisonResult)compare:(nonnull id <CBLUniversalExposurePropertyValue>)value {
     if (value != self) { return CBLExposureComparisonInvalid; }
     return NSOrderedSame;
