@@ -1,18 +1,17 @@
 #!/bin/sh
 
-CONFIGURATION=Release
-
-xcodebuild -scheme "StopKit Mac" -destination "generic/platform=OS X" -configuration ${CONFIGURATION} BUILD_LIBRARY_FOR_DISTRIBUTION=YES
-
-xcodebuild -scheme "StopKit iOS" -destination "generic/platform=iOS Simulator" -configuration ${CONFIGURATION} BUILD_LIBRARY_FOR_DISTRIBUTION=YES
-
-xcodebuild -scheme "StopKit iOS" -destination "generic/platform=iOS" -configuration ${CONFIGURATION} BUILD_LIBRARY_FOR_DISTRIBUTION=YES
-
 SRCROOT="$(pwd)"
-BUILT_PRODUCTS_DIR="${SRCROOT}"
+CONFIGURATION=Release
+BUILT_PRODUCTS_DIR="${SRCROOT}/build"
+
+xcodebuild -scheme "StopKit Mac" -destination "generic/platform=OS X" -configuration ${CONFIGURATION} BUILD_LIBRARY_FOR_DISTRIBUTION=YES CONFIGURATION_BUILD_DIR="${BUILT_PRODUCTS_DIR}/${CONFIGURATION}" 1> /dev/null 2>> ./Error.log
+
+xcodebuild -scheme "StopKit iOS" -destination "generic/platform=iOS Simulator" -configuration ${CONFIGURATION} BUILD_LIBRARY_FOR_DISTRIBUTION=YES CONFIGURATION_BUILD_DIR="${BUILT_PRODUCTS_DIR}/${CONFIGURATION}-iphonesimulator" 1> /dev/null 2>> ./Error.log
+
+xcodebuild -scheme "StopKit iOS" -destination "generic/platform=iOS" -configuration ${CONFIGURATION} BUILD_LIBRARY_FOR_DISTRIBUTION=YES CONFIGURATION_BUILD_DIR="${BUILT_PRODUCTS_DIR}/${CONFIGURATION}-iphoneos" 1> /dev/null 2>> ./Error.log
 
 # Clear previous builds
-DIST_DIR="${BUILT_PRODUCTS_DIR}/Distribution"
+DIST_DIR="${SRCROOT}/Distribution"
 rm -rf "${DIST_DIR}"
 mkdir -p "${DIST_DIR}"
 
