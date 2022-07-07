@@ -311,7 +311,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1340;
 				ORGANIZATIONNAME = "Cascable AB";
 				TargetAttributes = {
 					50310A421F99D98500D36CE1 = {
