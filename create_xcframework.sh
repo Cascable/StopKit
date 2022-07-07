@@ -34,7 +34,7 @@ for SDK in iphoneos iphonesimulator appletvos appletvsimulator maccatalyst; do
 done
 
 # Build XCFramework.
-xcodebuild -create-xcframework "${XC_FRAMEWORKS[@]}" -output "${DIST_DIR}/StopKit.xcframework"
+xcodebuild -create-xcframework "${XC_FRAMEWORKS[@]}" -output "${DIST_DIR}/StopKit.xcframework"  1> /dev/null 2>> ./Error.log
 
 # Clear temp build files
 rm -rf "${SRCROOT}/build"
