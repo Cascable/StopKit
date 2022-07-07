@@ -401,6 +401,17 @@
         }
     }
 
+    // Manual correction for extended Sony values.
+    if (value == 26666 && fraction == CBLExposureStopFractionTwoThirds) {
+        value = 25600;
+    } else if (value == 21333 && fraction == CBLExposureStopFractionOneThird) {
+        value = 20000;
+    } else if (value == 13333 && fraction == CBLExposureStopFractionTwoThirds) {
+        value = 12800;
+    } else if (value == 10666 && fraction == CBLExposureStopFractionOneThird) {
+        value = 10000;
+    }
+
     return value;
 }
 
