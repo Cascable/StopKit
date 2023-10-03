@@ -10,6 +10,10 @@
 
 @implementation CBLShutterSpeedValue
 
++(BOOL)supportsSecureCoding {
+    return YES;
+}
+
 +(nonnull CBLShutterSpeedValue *)oneSecondShutterSpeed {
     return [[CBLShutterSpeedValue alloc] initWithStopsFromASecond:[CBLExposureStops stopsFromDecimalValue:0.0]];
 }

@@ -10,6 +10,10 @@
 
 @implementation CBLApertureValue
 
++(BOOL)supportsSecureCoding {
+    return YES;
+}
+
 +(nonnull CBLApertureValue *)automaticAperture {
     static dispatch_once_t autoOnceToken;
     static CBLApertureValue *automatic = nil;

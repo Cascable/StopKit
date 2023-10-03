@@ -9,6 +9,10 @@
 
 @implementation CBLISOValue
 
++(BOOL)supportsSecureCoding {
+    return YES;
+}
+
 +(nonnull CBLISOValue *)ISO100 {
     return [[self alloc] initWithStopsFromISO100:[CBLExposureStops zeroStops]];
 }

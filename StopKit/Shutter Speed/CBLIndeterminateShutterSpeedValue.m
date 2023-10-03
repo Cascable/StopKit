@@ -7,6 +7,10 @@
 
 @implementation CBLIndeterminateShutterSpeedValue
 
++(BOOL)supportsSecureCoding {
+    return YES;
+}
+
 -(id)initWithName:(NSString *)name {
     self = [super init];
     if (self) {

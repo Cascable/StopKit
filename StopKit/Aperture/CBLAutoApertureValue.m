@@ -3,6 +3,10 @@
 
 @implementation CBLAutoApertureValue
 
++(BOOL)supportsSecureCoding {
+    return YES;
+}
+
 -(nonnull id)init {
     self = [super init];
     return self;

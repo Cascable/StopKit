@@ -8,6 +8,10 @@
 
 @implementation CBLExposureStops
 
++(BOOL)supportsSecureCoding {
+    return YES;
+}
+
 +(nonnull CBLExposureStops *)zeroStops {
     return [[self alloc] initWithWholeStops:0 fraction:CBLExposureStopFractionNone isNegative:NO];
 }

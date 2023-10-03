@@ -8,6 +8,10 @@
 
 @implementation CBLExposureCompensationValue
 
++(BOOL)supportsSecureCoding {
+    return YES;
+}
+
 +(nonnull CBLExposureCompensationValue *)zeroEV {
     return [self valueWithStopsFromZeroEV:[CBLExposureStops zeroStops]];
 }

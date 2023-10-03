@@ -11,6 +11,10 @@
 
 @implementation CBLAutoISOValue
 
++(BOOL)supportsSecureCoding {
+    return YES;
+}
+
 -(id)init {
     self = [super init];
     return self;
@@ -47,7 +51,10 @@
 }
 
 -(BOOL)isEqual:(id)object {
-    return object == self;
+    if (![object isKindOfClass:[self class]]) {
+        return NO;
+    }
+    return [[self succinctDescription] isEqual:[object succinctDescription]];
 }
 
 -(NSComparisonResult)compare:(id <CBLUniversalExposurePropertyValue>)value {

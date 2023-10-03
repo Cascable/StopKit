@@ -34,4 +34,47 @@ class StopKitTests: XCTestCase {
             XCTAssertEqual(shutterSpeed.fractionalRepresentation, testCase.output)
         }
     }
+
+    func testSecureCodingRoundTrip() throws {
+
+        let stops = ExposureStops(wholeStops: 1, fraction: .oneHalf, isNegative: false)
+        let encodedStops = try NSKeyedArchiver.archivedData(withRootObject: stops, requiringSecureCoding: true)
+        let decodedStops = try NSKeyedUnarchiver.unarchivedObject(ofClass: ExposureStops.self, from: encodedStops)
+        XCTAssertEqual(stops, decodedStops)
+
+        let shutterSpeed = ShutterSpeedValue.oneSecondShutterSpeed
+        let encodedSpeed = try NSKeyedArchiver.archivedData(withRootObject: shutterSpeed, requiringSecureCoding: true)
+        let decodedSpeed = try NSKeyedUnarchiver.unarchivedObject(ofClass: ShutterSpeedValue.self, from: encodedSpeed)
+        XCTAssertEqual(shutterSpeed, decodedSpeed)
+
+        let shutterIndeterminateSpeed = IndeterminateShutterSpeedValue(name: "Hello")!
+        let encodedIndeterminateSpeed = try NSKeyedArchiver.archivedData(withRootObject: shutterIndeterminateSpeed, requiringSecureCoding: true)
+        let decodedIndeterminateSpeed = try NSKeyedUnarchiver.unarchivedObject(ofClass: ShutterSpeedValue.self, from: encodedIndeterminateSpeed)
+        XCTAssertEqual(shutterIndeterminateSpeed, decodedIndeterminateSpeed)
+
+        let aperture = ApertureValue.f2Point8
+        let encodedAperture = try NSKeyedArchiver.archivedData(withRootObject: aperture, requiringSecureCoding: true)
+        let decodedAperture = try NSKeyedUnarchiver.unarchivedObject(ofClass: ApertureValue.self, from: encodedAperture)
+        XCTAssertEqual(aperture, decodedAperture)
+
+        let apertureIndeterminate = AutoApertureValue.automaticAperture
+        let encodedIndeterminateAperture = try NSKeyedArchiver.archivedData(withRootObject: apertureIndeterminate, requiringSecureCoding: true)
+        let decodedIndeterminateAperture = try NSKeyedUnarchiver.unarchivedObject(ofClass: ApertureValue.self, from: encodedIndeterminateAperture)
+        XCTAssertEqual(apertureIndeterminate, decodedIndeterminateAperture)
+
+        let isoSpeed = ISOValue.iso1600
+        let encodedISO = try NSKeyedArchiver.archivedData(withRootObject: isoSpeed, requiringSecureCoding: true)
+        let decodedISO = try NSKeyedUnarchiver.unarchivedObject(ofClass: ISOValue.self, from: encodedISO)
+        XCTAssertEqual(isoSpeed, decodedISO)
+
+        let isoIndeterminate = AutoISOValue.automaticISO
+        let encodedIndeterminateISO = try NSKeyedArchiver.archivedData(withRootObject: isoIndeterminate, requiringSecureCoding: true)
+        let decodedIndeterminateISO = try NSKeyedUnarchiver.unarchivedObject(ofClass: ISOValue.self, from: encodedIndeterminateISO)
+        XCTAssertEqual(isoIndeterminate, decodedIndeterminateISO)
+
+        let ev = ExposureCompensationValue.zeroEV
+        let encodedEv = try NSKeyedArchiver.archivedData(withRootObject: ev, requiringSecureCoding: true)
+        let decodedEv = try NSKeyedUnarchiver.unarchivedObject(ofClass: ExposureCompensationValue.self, from: encodedEv)
+        XCTAssertEqual(ev, decodedEv)
+    }
 }
