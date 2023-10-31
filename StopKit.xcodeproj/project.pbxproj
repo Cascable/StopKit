@@ -42,29 +42,7 @@
 		50310A791F99DCFC00D36CE1 /* UniversalExposureCompensations.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50310A7B1F99DCFC00D36CE1 /* UniversalExposureCompensations.strings */; };
 		50310A7F1F99DD5D00D36CE1 /* UniversalShutterSpeeds.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50310A811F99DD5D00D36CE1 /* UniversalShutterSpeeds.strings */; };
 		50310A851F99DD7400D36CE1 /* UniversalISOValues.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50310A871F99DD7400D36CE1 /* UniversalISOValues.strings */; };
-		509B6CCC1F99E73300F0E888 /* StopKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A461F99D98500D36CE1 /* StopKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		509B6CCD1F99E74300F0E888 /* CBLExposureStops.m in Sources */ = {isa = PBXBuildFile; fileRef = 50310A721F99DB0F00D36CE1 /* CBLExposureStops.m */; };
-		509B6CCE1F99E74300F0E888 /* CBLApertureValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 50310A641F99DABC00D36CE1 /* CBLApertureValue.m */; };
-		509B6CCF1F99E74300F0E888 /* CBLAutoApertureValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 50310A671F99DABC00D36CE1 /* CBLAutoApertureValue.m */; };
-		509B6CD01F99E74300F0E888 /* CBLShutterSpeedValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 50310A5C1F99DA9800D36CE1 /* CBLShutterSpeedValue.m */; };
-		509B6CD11F99E74300F0E888 /* CBLIndeterminateShutterSpeedValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 50310A5F1F99DAAD00D36CE1 /* CBLIndeterminateShutterSpeedValue.m */; };
-		509B6CD21F99E74300F0E888 /* CBLISOValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 50310A551F99DA7D00D36CE1 /* CBLISOValue.m */; };
-		509B6CD31F99E74300F0E888 /* CBLAutoISOValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 50310A531F99DA7D00D36CE1 /* CBLAutoISOValue.m */; };
-		509B6CD41F99E74800F0E888 /* UniversalExposureCompensations.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50310A7B1F99DCFC00D36CE1 /* UniversalExposureCompensations.strings */; };
-		509B6CD51F99E74800F0E888 /* UniversalShutterSpeeds.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50310A811F99DD5D00D36CE1 /* UniversalShutterSpeeds.strings */; };
-		509B6CD61F99E74800F0E888 /* UniversalISOValues.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50310A871F99DD7400D36CE1 /* UniversalISOValues.strings */; };
-		509B6CD71F99E74E00F0E888 /* CBLAutoISOValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A521F99DA7D00D36CE1 /* CBLAutoISOValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		509B6CD81F99E75200F0E888 /* CBLISOValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A541F99DA7D00D36CE1 /* CBLISOValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		509B6CD91F99E75600F0E888 /* CBLIndeterminateShutterSpeedValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A601F99DAAD00D36CE1 /* CBLIndeterminateShutterSpeedValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		509B6CDA1F99E75800F0E888 /* CBLShutterSpeedValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A5B1F99DA9800D36CE1 /* CBLShutterSpeedValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		509B6CDB1F99E75C00F0E888 /* CBLAutoApertureValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A661F99DABC00D36CE1 /* CBLAutoApertureValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		509B6CDC1F99E76200F0E888 /* CBLApertureValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A651F99DABC00D36CE1 /* CBLApertureValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		509B6CDD1F99E76500F0E888 /* CBLExposureCompensationValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A6E1F99DAD400D36CE1 /* CBLExposureCompensationValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		509B6CDE1F99E76900F0E888 /* CBLExposureStops.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A711F99DB0F00D36CE1 /* CBLExposureStops.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		509B6CDF1F99E76D00F0E888 /* CBLUniversalPropertyValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50310A4F1F99DA6900D36CE1 /* CBLUniversalPropertyValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		50CDCC131FCDB7B400BAA22C /* CBLExposureCompensationValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 50310A6D1F99DAD400D36CE1 /* CBLExposureCompensationValue.m */; };
 		50FA45AF2876CC7D00D5C4E1 /* StopKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA45AE2876CC7D00D5C4E1 /* StopKitTests.swift */; };
-		50FA45B02876CC7D00D5C4E1 /* StopKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509B6CC21F99E67600F0E888 /* StopKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,20 +52,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 50310A8A1F99DFA500D36CE1;
 			remoteInfo = "Version Header File Generation";
-		};
-		509B6CCA1F99E6E700F0E888 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 50310A3A1F99D98500D36CE1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 50310A8A1F99DFA500D36CE1;
-			remoteInfo = "Version Header File Generation";
-		};
-		50FA45B12876CC7D00D5C4E1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 50310A3A1F99D98500D36CE1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 509B6CC11F99E67600F0E888;
-			remoteInfo = "StopKit Mac";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -118,7 +82,6 @@
 		50310A821F99DD5F00D36CE1 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/UniversalShutterSpeeds.strings; sourceTree = "<group>"; };
 		50310A861F99DD7400D36CE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UniversalISOValues.strings; sourceTree = "<group>"; };
 		50310A881F99DD7600D36CE1 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/UniversalISOValues.strings; sourceTree = "<group>"; };
-		509B6CC21F99E67600F0E888 /* StopKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StopKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C0F1C41F99EEFA004A9162 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		50FA45AC2876CC7D00D5C4E1 /* StopKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StopKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50FA45AE2876CC7D00D5C4E1 /* StopKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopKitTests.swift; sourceTree = "<group>"; };
@@ -132,18 +95,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		509B6CBE1F99E67600F0E888 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		50FA45A92876CC7D00D5C4E1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50FA45B02876CC7D00D5C4E1 /* StopKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,7 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				50310A431F99D98500D36CE1 /* StopKit.framework */,
-				509B6CC21F99E67600F0E888 /* StopKit.framework */,
 				50FA45AC2876CC7D00D5C4E1 /* StopKitTests.xctest */,
 			);
 			name = Products;
@@ -275,29 +229,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		509B6CBF1F99E67600F0E888 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				509B6CD91F99E75600F0E888 /* CBLIndeterminateShutterSpeedValue.h in Headers */,
-				509B6CDF1F99E76D00F0E888 /* CBLUniversalPropertyValue.h in Headers */,
-				509B6CD81F99E75200F0E888 /* CBLISOValue.h in Headers */,
-				509B6CDA1F99E75800F0E888 /* CBLShutterSpeedValue.h in Headers */,
-				509B6CDB1F99E75C00F0E888 /* CBLAutoApertureValue.h in Headers */,
-				509B6CCC1F99E73300F0E888 /* StopKit.h in Headers */,
-				509B6CDD1F99E76500F0E888 /* CBLExposureCompensationValue.h in Headers */,
-				509B6CDE1F99E76900F0E888 /* CBLExposureStops.h in Headers */,
-				509B6CD71F99E74E00F0E888 /* CBLAutoISOValue.h in Headers */,
-				509B6CDC1F99E76200F0E888 /* CBLApertureValue.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		50310A421F99D98500D36CE1 /* StopKit iOS */ = {
+		50310A421F99D98500D36CE1 /* StopKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 50310A4B1F99D98500D36CE1 /* Build configuration list for PBXNativeTarget "StopKit iOS" */;
+			buildConfigurationList = 50310A4B1F99D98500D36CE1 /* Build configuration list for PBXNativeTarget "StopKit" */;
 			buildPhases = (
 				50310A3E1F99D98500D36CE1 /* Sources */,
 				50310A3F1F99D98500D36CE1 /* Frameworks */,
@@ -309,28 +246,9 @@
 			dependencies = (
 				50310A901F99DFC700D36CE1 /* PBXTargetDependency */,
 			);
-			name = "StopKit iOS";
+			name = StopKit;
 			productName = StopKit;
 			productReference = 50310A431F99D98500D36CE1 /* StopKit.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		509B6CC11F99E67600F0E888 /* StopKit Mac */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 509B6CC91F99E67600F0E888 /* Build configuration list for PBXNativeTarget "StopKit Mac" */;
-			buildPhases = (
-				509B6CBD1F99E67600F0E888 /* Sources */,
-				509B6CBE1F99E67600F0E888 /* Frameworks */,
-				509B6CBF1F99E67600F0E888 /* Headers */,
-				509B6CC01F99E67600F0E888 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				509B6CCB1F99E6E700F0E888 /* PBXTargetDependency */,
-			);
-			name = "StopKit Mac";
-			productName = "StopKit Mac";
-			productReference = 509B6CC21F99E67600F0E888 /* StopKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		50FA45AB2876CC7D00D5C4E1 /* StopKitTests */ = {
@@ -344,7 +262,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				50FA45B22876CC7D00D5C4E1 /* PBXTargetDependency */,
 			);
 			name = StopKitTests;
 			productName = StopKitTests;
@@ -369,10 +286,6 @@
 						CreatedOnToolsVersion = 9.0.1;
 						ProvisioningStyle = Automatic;
 					};
-					509B6CC11F99E67600F0E888 = {
-						CreatedOnToolsVersion = 9.0.1;
-						ProvisioningStyle = Manual;
-					};
 					50FA45AB2876CC7D00D5C4E1 = {
 						CreatedOnToolsVersion = 13.4;
 						ProvisioningStyle = Automatic;
@@ -393,8 +306,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				50310A421F99D98500D36CE1 /* StopKit iOS */,
-				509B6CC11F99E67600F0E888 /* StopKit Mac */,
+				50310A421F99D98500D36CE1 /* StopKit */,
 				50310A8A1F99DFA500D36CE1 /* Version Header File Generation */,
 				50FA45AB2876CC7D00D5C4E1 /* StopKitTests */,
 			);
@@ -409,16 +321,6 @@
 				50310A7F1F99DD5D00D36CE1 /* UniversalShutterSpeeds.strings in Resources */,
 				50310A791F99DCFC00D36CE1 /* UniversalExposureCompensations.strings in Resources */,
 				50310A851F99DD7400D36CE1 /* UniversalISOValues.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		509B6CC01F99E67600F0E888 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				509B6CD51F99E74800F0E888 /* UniversalShutterSpeeds.strings in Resources */,
-				509B6CD41F99E74800F0E888 /* UniversalExposureCompensations.strings in Resources */,
-				509B6CD61F99E74800F0E888 /* UniversalISOValues.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,21 +370,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		509B6CBD1F99E67600F0E888 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				509B6CCD1F99E74300F0E888 /* CBLExposureStops.m in Sources */,
-				509B6CCF1F99E74300F0E888 /* CBLAutoApertureValue.m in Sources */,
-				50CDCC131FCDB7B400BAA22C /* CBLExposureCompensationValue.m in Sources */,
-				509B6CCE1F99E74300F0E888 /* CBLApertureValue.m in Sources */,
-				509B6CD31F99E74300F0E888 /* CBLAutoISOValue.m in Sources */,
-				509B6CD21F99E74300F0E888 /* CBLISOValue.m in Sources */,
-				509B6CD01F99E74300F0E888 /* CBLShutterSpeedValue.m in Sources */,
-				509B6CD11F99E74300F0E888 /* CBLIndeterminateShutterSpeedValue.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		50FA45A82876CC7D00D5C4E1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -498,16 +385,6 @@
 			isa = PBXTargetDependency;
 			target = 50310A8A1F99DFA500D36CE1 /* Version Header File Generation */;
 			targetProxy = 50310A8F1F99DFC700D36CE1 /* PBXContainerItemProxy */;
-		};
-		509B6CCB1F99E6E700F0E888 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 50310A8A1F99DFA500D36CE1 /* Version Header File Generation */;
-			targetProxy = 509B6CCA1F99E6E700F0E888 /* PBXContainerItemProxy */;
-		};
-		50FA45B22876CC7D00D5C4E1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 509B6CC11F99E67600F0E888 /* StopKit Mac */;
-			targetProxy = 50FA45B12876CC7D00D5C4E1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -691,7 +568,8 @@
 				PRODUCT_NAME = StopKit;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = NO;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -723,7 +601,8 @@
 				PRODUCT_NAME = StopKit;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = NO;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -743,67 +622,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EB5BP6YJ4R;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		509B6CC71F99E67600F0E888 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Manual;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "StopKit/Info-Mac.plist";
-				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-traditional";
-				INFOPLIST_PREFIX_HEADER = "${BUILD_DIR}/CBLStopKitVersions.h";
-				INFOPLIST_PREPROCESS = YES;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = se.cascable.StopKit;
-				PRODUCT_NAME = StopKit;
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = macosx;
-				SKIP_INSTALL = NO;
-			};
-			name = Debug;
-		};
-		509B6CC81F99E67600F0E888 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Manual;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "StopKit/Info-Mac.plist";
-				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-traditional";
-				INFOPLIST_PREFIX_HEADER = "${BUILD_DIR}/CBLStopKitVersions.h";
-				INFOPLIST_PREPROCESS = YES;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = se.cascable.StopKit;
-				PRODUCT_NAME = StopKit;
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = macosx;
-				SKIP_INSTALL = NO;
 			};
 			name = Release;
 		};
@@ -864,7 +682,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		50310A4B1F99D98500D36CE1 /* Build configuration list for PBXNativeTarget "StopKit iOS" */ = {
+		50310A4B1F99D98500D36CE1 /* Build configuration list for PBXNativeTarget "StopKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				50310A4C1F99D98500D36CE1 /* Debug */,
@@ -878,15 +696,6 @@
 			buildConfigurations = (
 				50310A8C1F99DFA500D36CE1 /* Debug */,
 				50310A8D1F99DFA500D36CE1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		509B6CC91F99E67600F0E888 /* Build configuration list for PBXNativeTarget "StopKit Mac" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				509B6CC71F99E67600F0E888 /* Debug */,
-				509B6CC81F99E67600F0E888 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
