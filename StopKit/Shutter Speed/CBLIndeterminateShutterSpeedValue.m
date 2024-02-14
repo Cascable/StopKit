@@ -25,7 +25,7 @@
 
 - (nullable instancetype)initWithCoder:(nonnull NSCoder *)aDecoder {
     if ([aDecoder containsValueForKey:@"name"]) {
-        return [self initWithName:[aDecoder decodeObjectForKey:@"name"]];
+        return [self initWithName:[aDecoder decodeObjectOfClass:[NSString class] forKey:@"name"]];
     } else {
         return nil;
     }
