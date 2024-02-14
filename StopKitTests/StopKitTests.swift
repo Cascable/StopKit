@@ -35,6 +35,39 @@ class StopKitTests: XCTestCase {
         }
     }
 
+    struct FractionAndExpectedOuput {
+        let numerator: Int
+        let denominator: Int
+        let output: String
+        let duration: TimeInterval
+    }
+
+    func testExtendedNikonShutterSpeeds() throws {
+
+        let values: [FractionAndExpectedOuput] = [
+            FractionAndExpectedOuput(numerator: 60, denominator: 1, output: "60", duration: 60),
+            FractionAndExpectedOuput(numerator: 90, denominator: 1, output: "90", duration: 90),
+            FractionAndExpectedOuput(numerator: 120, denominator: 1, output: "120", duration: 120),
+            FractionAndExpectedOuput(numerator: 180, denominator: 1, output: "180", duration: 180),
+            FractionAndExpectedOuput(numerator: 240, denominator: 1, output: "240", duration: 240),
+            FractionAndExpectedOuput(numerator: 300, denominator: 1, output: "300", duration: 300),
+            FractionAndExpectedOuput(numerator: 480, denominator: 1, output: "480", duration: 480),
+            FractionAndExpectedOuput(numerator: 600, denominator: 1, output: "600", duration: 600),
+            FractionAndExpectedOuput(numerator: 720, denominator: 1, output: "720", duration: 720),
+            FractionAndExpectedOuput(numerator: 900, denominator: 1, output: "900", duration: 900),
+        ]
+
+        for testCase in values {
+            let decimalSpeed: Double = Double(testCase.numerator) / Double(testCase.denominator)
+            let stops: Double = log(decimalSpeed) / log(2.0)
+            let speed = ShutterSpeedValue(stopsFromASecond: ExposureStops(fromDecimalValue: stops))
+            XCTAssertEqual(speed.localizedDisplayValue, testCase.output)
+            XCTAssertEqual(speed.approximateTimeInterval, testCase.duration, accuracy: 0.01)
+            XCTAssertEqual(Int(speed.upperFractionalValue), testCase.numerator)
+            XCTAssertEqual(Int(speed.lowerFractionalValue), testCase.denominator)
+        }
+    }
+
     func testSecureCodingRoundTrip() throws {
 
         let stops = ExposureStops(wholeStops: 1, fraction: .oneHalf, isNegative: false)

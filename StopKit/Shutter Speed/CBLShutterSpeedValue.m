@@ -416,6 +416,26 @@
         value = 10000;
     }
 
+    // Manual correction for extended Nikon values (long shutter times over 90 seconds). The camera
+    // rounds to whole minutes above this value.
+    if (!stops.isNegative) {
+        if (value == 125) {
+            value = 120;
+        } else if (value == 250) {
+            value = 240;
+        } else if (value == 320) {
+            value = 300;
+        } else if (value == 500) {
+            value = 480;
+        } else if (value == 640) {
+            value = 600;
+        } else if (value == 750) {
+            value = 720;
+        } else if (value == 800) {
+            value = 900;
+        }
+    }
+
     return value;
 }
 
