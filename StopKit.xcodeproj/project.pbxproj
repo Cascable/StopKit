@@ -53,6 +53,13 @@
 			remoteGlobalIDString = 50310A8A1F99DFA500D36CE1;
 			remoteInfo = "Version Header File Generation";
 		};
+		ABCD53A32B7BD76700E2F176 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50310A3A1F99D98500D36CE1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50310A421F99D98500D36CE1;
+			remoteInfo = StopKit;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -262,6 +269,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				ABCD53A42B7BD76700E2F176 /* PBXTargetDependency */,
 			);
 			name = StopKitTests;
 			productName = StopKitTests;
@@ -275,7 +283,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1510;
 				ORGANIZATIONNAME = "Cascable AB";
 				TargetAttributes = {
 					50310A421F99D98500D36CE1 = {
@@ -385,6 +393,11 @@
 			isa = PBXTargetDependency;
 			target = 50310A8A1F99DFA500D36CE1 /* Version Header File Generation */;
 			targetProxy = 50310A8F1F99DFC700D36CE1 /* PBXContainerItemProxy */;
+		};
+		ABCD53A42B7BD76700E2F176 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50310A421F99D98500D36CE1 /* StopKit */;
+			targetProxy = ABCD53A32B7BD76700E2F176 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
