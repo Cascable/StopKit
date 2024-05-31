@@ -12,6 +12,10 @@ xcodebuild -scheme "StopKit" -destination "generic/platform=iOS Simulator" -conf
 
 xcodebuild -scheme "StopKit" -destination "generic/platform=iOS" -configuration ${CONFIGURATION} BUILD_LIBRARY_FOR_DISTRIBUTION=YES CONFIGURATION_BUILD_DIR="${BUILT_PRODUCTS_DIR}/${CONFIGURATION}-iphoneos" 1> /dev/null 2>> ./Error.log
 
+xcodebuild -scheme "StopKit" -destination "generic/platform=visionOS Simulator" -configuration ${CONFIGURATION} BUILD_LIBRARY_FOR_DISTRIBUTION=YES CONFIGURATION_BUILD_DIR="${BUILT_PRODUCTS_DIR}/${CONFIGURATION}-xrossimulator" 1> /dev/null 2>> ./Error.log
+
+xcodebuild -scheme "StopKit" -destination "generic/platform=visionOS" -configuration ${CONFIGURATION} BUILD_LIBRARY_FOR_DISTRIBUTION=YES CONFIGURATION_BUILD_DIR="${BUILT_PRODUCTS_DIR}/${CONFIGURATION}-xros" 1> /dev/null 2>> ./Error.log
+
 # Clear previous builds
 DIST_DIR="${SRCROOT}/Distribution"
 rm -rf "${DIST_DIR}"
@@ -30,7 +34,7 @@ function add_framework() {
   fi
 }
 
-for SDK in macosx iphoneos iphonesimulator appletvos appletvsimulator maccatalyst; do
+for SDK in macosx iphoneos iphonesimulator appletvos appletvsimulator maccatalyst xros xrossimulator; do
   add_framework "${SRCROOT}/build/${CONFIGURATION}-${SDK}" "${DIST_DIR}/StopKit-${SDK}.dSYM"
 done
 
